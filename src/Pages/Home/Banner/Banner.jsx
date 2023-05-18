@@ -4,7 +4,7 @@ import slider2 from '../../../../Images/Action_Hero_Banner2.jfif'
 const Banner = () => {
     return (
         <div className="carousel w-full">
-            <div id="slide1" className="carousel-item relative w-full img">
+            <div id="slide1" className="carousel-item relative w-full bannerimg">
                 <img  src={slider1} className="w-full" alt="Slide 1" />
                 <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
                     <a href="#slide3" className="btn btn-circle">❮</a>
@@ -16,7 +16,7 @@ const Banner = () => {
                     <p className="text-white mt-5">The Best Toys Are The Ones That Makes You Feel Like They Are Getting The Real Deal</p>
                 </div>
             </div>
-            <div id="slide2" className="carousel-item relative w-full img">
+            <div id="slide2" className="carousel-item relative w-full bannerimg">
                 <img src={slider2} className="w-full" alt="Slide 2" />
                 <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
                     <a href="#slide1" className="btn btn-circle">❮</a>
@@ -28,7 +28,7 @@ const Banner = () => {
                     <p className="text-white mt-5">The Best Toys Are The Ones That Makes You Feel Like They Are Getting The Real Deal</p>
                 </div>
             </div>
-            <div id="slide3" className="carousel-item relative w-full img">
+            <div id="slide3" className="carousel-item relative w-full bannerimg">
                 <img src={slider1} className="w-full" alt="Slide 3" />
                 <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
                     <a href="#slide2" className="btn btn-circle">❮</a>

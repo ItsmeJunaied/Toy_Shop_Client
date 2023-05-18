@@ -1,4 +1,4 @@
-.img {
+.bannerimg {
 
     height: 700px;
     position: relative;
@@ -6,7 +6,7 @@
     overflow: hidden;
 }
 
-.img::after {
+.bannerimg::after {
     content: "";
     position: absolute;
     top: 0;
@@ -18,7 +18,7 @@
     pointer-events: none;
 }
 
-.img img {
+.bannerimg img {
     animation: zoomInOut 8s infinite alternate;
   }
   
