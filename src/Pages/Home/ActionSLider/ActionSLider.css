@@ -1,0 +1,13 @@
+.marquee span {
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+  }
+  
+  .marquee span:first-child {
+    opacity: 1;
+  }
+  
+  .marquee span:last-child {
+    opacity: 1;
+  }
+  
