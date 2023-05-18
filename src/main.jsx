@@ -11,6 +11,7 @@ import './index.css'
 import Main from './Layouts/Main';
 import Home from './Pages/Home/Home/Home';
 import LogIn from './Pages/LogIN/LogIn';
+import Register from './Pages/Register/Register';
 
 const router = createBrowserRouter([
   {
@@ -24,7 +25,11 @@ const router = createBrowserRouter([
       {
         path:"login",
         element:<LogIn></LogIn>
-      }
+      },
+      {
+        path:"register",
+        element:<Register></Register>
+      },
     ]
   },
 ]);
