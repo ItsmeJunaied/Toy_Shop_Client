@@ -1,5 +1,6 @@
 import './AddToys.css';
 import back from '../../../Images/back4.png'
+import Swal from 'sweetalert2';
 const AddToys = () => {
     const handleAddHero=event=>{
         event.preventDefault();
@@ -18,6 +19,34 @@ const AddToys = () => {
 
         const newHero={name,sname,email,categoty,price,rating,quantity,detail,photo}
         console.log(newHero);
+
+        fetch('http://localhost:5000/toy',{
+            method:'POST',
+            headers:{
+                'content-type':'application/json'
+            },
+            body: JSON.stringify(newHero)
+        })
+        .then(res=> res.json())
+        .then(data=>{
+            console.log(data);
+            if(data.insertedId){
+                Swal.fire({
+                    position: 'top-end',
+                    icon: 'success',
+                    title: 'SuccessFully Added',
+                    showConfirmButton: false,
+                    timer: 1500
+                  })
+            }else{
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Something went wrong!',
+                    footer: '<a href="">Why do I have this issue?</a>'
+                  })
+            }
+        })
     }
     return (
         <div className='addtoybd'>
@@ -28,11 +57,10 @@ const AddToys = () => {
 
                     <p className='ml-60 mr-60'>Most of the projects I work on have about <mark>3</mark> important colors: Main- , Accent-  and Background-Color. Naturally tons of other colors are used in a typical Project, but they are mostly used within specific components.</p>
 
-                    {/* <p>I find it useful to set those 3 colors as vars on the root and change them in specific contexts. It turns out that the complexity of the components I build is dramatically cut down by this. And also gives me a lot of control over the cascade.</p> */}
                     <form onSubmit={handleAddHero}>
                         <div className='card' >
                             <div className='flex '>
-                                <div className=' flex-grow'>
+                                <div   className=' flex-grow'>
                                     <label className="input">
                                         <input className="input__field" type="text" name='name' placeholder=" " />
                                         <span className="input__label">Hero Toy Name</span>
@@ -47,7 +75,7 @@ const AddToys = () => {
                                 </div>
                             </div>
                             <div className='flex '>
-                                <div className=' flex-grow'>
+                                <div   className=' flex-grow'>
                                     <label className="input">
                                         <input className="input__field" type="email" name='email' placeholder=" " />
                                         <span className="input__label">Seller Email</span>
@@ -62,7 +90,7 @@ const AddToys = () => {
                                 </div>
                             </div>
                             <div className='flex '>
-                                <div className=' flex-grow'>
+                                <div   className=' flex-grow'>
                                     <label className="input">
                                         <input className="input__field" type="number" name='price' placeholder=" " />
                                         <span className="input__label">Price</span>
@@ -71,13 +99,13 @@ const AddToys = () => {
                                 <div className=' flex-grow'>
 
                                     <label className="input">
-                                        <input className="input__field" type="number" name='rating' placeholder=" " />
+                                        <input className="input__field" type="number" step="0.1" name='rating' placeholder=" " />
                                         <span className="input__label">Rating</span>
                                     </label>
                                 </div>
                             </div>
                             <div className='flex '>
-                                <div className=' flex-grow'>
+                                <div   className=' flex-grow'>
                                     <label className="input">
                                         <input className="input__field" type="number" name='quantity' placeholder=" " />
                                         <span className="input__label">Available quantity</span>
@@ -92,7 +120,7 @@ const AddToys = () => {
                                 </div>
                             </div>
                             <div className='flex '>
-                                <div className=' flex-grow'>
+                                <div   className=' flex-grow'>
                                     <label className="input">
                                         <input className="input__field" type="text" name='photo' placeholder=" " />
                                         <span className="input__label">Photo URL</span>
