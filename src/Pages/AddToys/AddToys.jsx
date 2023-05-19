@@ -2,7 +2,7 @@ import './AddToys.css';
 
 const AddToys = () => {
     return (
-        <div>
+        <div className='addtoybd'>
             
         </div>
     );
