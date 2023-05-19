@@ -22,7 +22,7 @@ const AboutUs = () => {
                 <div className="circle ml-40">
                     <div className="logo"></div>
                     <div className="text">
-                        <p>Grab You Action Hero Before Its too late : ! </p>
+                        <p>Waiting for what! Grab You Action Hero Now. </p>
                     </div>
                 </div>
                 <div className='ml-60 mt-12' data-aos="fade-up-left">

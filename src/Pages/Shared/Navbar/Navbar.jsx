@@ -3,8 +3,13 @@ import logo from '../../../../Images/ToyHeroes-logo-1.png';
 const Navbar = () => {
     const navlinks = <>
         <li><Link to='/'>Home</Link></li>
-        <li><Link to={'/'}>About Us</Link></li>
+        <li><Link to={'/alltoys'}>All Toys</Link></li>
+        <li><Link to={'/mytoys'}>My Toys</Link></li>
+        <li><Link to={'/addtoys'}>Add Toys</Link></li>
         <li><Link to={'/login'}>Log In</Link></li>
+        {/* {
+                    user ? null : <ActiveLInk className='' to='/register'>Register</ActiveLInk>
+        } */}
         <li><Link to={'/register'}>Register</Link></li>
     </>
 

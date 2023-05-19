@@ -12,6 +12,9 @@ import Main from './Layouts/Main';
 import Home from './Pages/Home/Home/Home';
 import LogIn from './Pages/LogIN/LogIn';
 import Register from './Pages/Register/Register';
+import AddToys from './Pages/AddToys/AddToys';
+import MyToys from './Pages/MyToys/MyToys';
+import AllToys from './Pages/AllToys/AllToys';
 
 const router = createBrowserRouter([
   {
@@ -21,6 +24,18 @@ const router = createBrowserRouter([
       {
         path:"/",
         element:<Home></Home>
+      },
+      {
+        path:"addtoys",
+        element:<AddToys></AddToys>
+      },
+      {
+        path:"mytoys",
+        element:<MyToys></MyToys>
+      },
+      {
+        path:"alltoys",
+        element:<AllToys></AllToys>
       },
       {
         path:"login",
