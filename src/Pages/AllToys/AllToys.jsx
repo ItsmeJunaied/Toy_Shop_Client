@@ -1,5 +1,6 @@
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 import './AllToys.css';
+
 
 const AllToys = () => {
     const heroToys = useLoaderData();
@@ -49,7 +50,12 @@ const AllToys = () => {
                                         <td>
                                             {toy.quantity}
                                         </td>
-                                        <td> <button className=" btn btn-accent">Details</button></td>
+                                        <td>
+                                            <Link to={`/singletoy/${toy._id}`}>
+                                                <button  className=" btn btn-accent">Details</button>
+                                            </Link>
+                                            
+                                        </td>
                                     </tr>)
                             }
 

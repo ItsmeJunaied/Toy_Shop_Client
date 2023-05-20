@@ -1,0 +1,99 @@
+.custom-card {
+    margin: 350px 30px;
+    height: 500px;
+    width: 300px;
+    background-color: #fff;
+    border: 5px solid black;
+    box-shadow: 0 0 0 7px #fff, 0 0 8px 5px #000;
+  }
+  
+  .custom-card .card-image {
+    position: relative;
+    width: 100%;
+    border-bottom: 5px solid #000;
+    z-index: 1;
+  }
+  
+  .custom-card .card-image > img {
+    position: absolute;
+    z-index: 2;
+    height: 100%;
+  }
+  
+  .custom-card .card-text {
+    height: 45%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .custom-card h2 {
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 2rem;
+    color: #59C887;
+    /* letter-spacing: -5px; */
+    line-height: 50px;
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+  .custom-card p {
+    font-size: 2rem;
+    line-height: 30px;
+    font-weight: 500;
+    text-align: center;
+  }
+  
+  .custom-card .card-text > div {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .custom-card .card-text > div > div:first-child {
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+  }
+  
+  .custom-card .card-text > div > div:first-child > span:first-child {
+    font-size: 4rem;
+    font-weight: 800;
+  }
+  
+  .custom-card .card-text > div > div:first-child > span:last-child {
+    font-size: 2rem;
+    font-weight: 600;
+  }
+  
+  .custom-card .card-text > div > div:last-child {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 5px solid black;
+    border-right: none;
+    border-bottom: none;
+    padding: 10px 20px;
+  }
+  
+  .custom-card .card-text > div > div:last-child > span:first-child {
+    font-size: 2rem;
+    font-weight: bold;
+  }
+  
+  .custom-card .card-text > div > div:last-child > span:last-child {
+    font-weight: 500;
+  }
+  
+  #hulk > .card-image {
+    height: 55%;
+    background-color: #FFDD33;
+  }
+  
+  #hulk > .card-image > img {
+    width: 150%;
+    height: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  

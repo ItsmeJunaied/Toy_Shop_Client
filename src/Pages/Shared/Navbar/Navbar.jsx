@@ -17,13 +17,20 @@ const Navbar = () => {
         <li><Link to='/mytoys'>My Toys</Link></li>
         <li><Link to='/addtoys'>Add Toys</Link></li>
         {
-            user && <img className="w-10 h-10 rounded-full ml-10" src={user.photoURL} title={user.displayName} alt="User avatar" />
+            user
+            &&
+            <div className="avatar online">
+                <div className="w-10 rounded-full">
+                    <img src={user.photoURL} title={user.displayName} alt="User avatar" />
+                </div>
+            </div>
+            
         }
         {
-            user ? <li><Link to='/login'  onClick={handleLogout}>Log Out</Link></li>:
-            <li><Link to='/login'>Log In</Link></li>
+            user ? <li><Link to='/login' onClick={handleLogout}>Log Out</Link></li> :
+                <li><Link to='/login'>Log In</Link></li>
         }
-        
+
         {
             user ? null : <li><Link to='/register'>Register</Link></li>
         }
