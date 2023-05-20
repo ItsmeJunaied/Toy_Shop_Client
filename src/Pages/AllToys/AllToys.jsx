@@ -1,6 +1,8 @@
+import { useLoaderData } from 'react-router-dom';
 import './AllToys.css';
 
 const AllToys = () => {
+    const heroToys = useLoaderData();
     return (
         <div>
             <div className="table">
@@ -34,18 +36,23 @@ const AllToys = () => {
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td> 1 </td>
-                                <td> </td>
-                                <td>
-                                    <p className="status delivered">Delivered</p>
-                                </td>
-                                <td> 17 Dec, 2022 </td>
-                                <td>
-                                    Delivered
-                                </td>
-                                <td> <button className=" btn btn-accent">Details</button></td>
-                            </tr>
+                            {
+                                heroToys.map(toy =>
+                                    <tr key={toy._id}>
+                                        <td> {toy.sname}</td>
+                                        <td>{toy.name} </td>
+                                        <td>
+                                            <p className="status delivered">{toy.
+                                                categoty}</p>
+                                        </td>
+                                        <td>{toy.price}</td>
+                                        <td>
+                                            {toy.quantity}
+                                        </td>
+                                        <td> <button className=" btn btn-accent">Details</button></td>
+                                    </tr>)
+                            }
+
                         </tbody>
                     </table>
                 </div>
