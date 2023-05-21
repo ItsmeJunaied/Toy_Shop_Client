@@ -14,8 +14,17 @@ const Navbar = () => {
     const navlinks = <>
         <li><Link to='/'>Home</Link></li>
         <li><Link to='/alltoys'>All Toys</Link></li>
-        <li><Link to='/mytoys'>My Toys</Link></li>
+
         <li><Link to='/addtoys'>Add Toys</Link></li>
+        
+        {
+            user ?
+                <><li><Link to='/mytoys'>My Toys</Link></li>
+                    <li><Link to='/login' onClick={handleLogout}>Log Out</Link></li>
+                </>
+                :
+                <li><Link to='/login'>Log In</Link></li>
+        }
         {
             user
             &&
@@ -24,11 +33,7 @@ const Navbar = () => {
                     <img src={user.photoURL} title={user.displayName} alt="User avatar" />
                 </div>
             </div>
-            
-        }
-        {
-            user ? <li><Link to='/login' onClick={handleLogout}>Log Out</Link></li> :
-                <li><Link to='/login'>Log In</Link></li>
+
         }
 
         {

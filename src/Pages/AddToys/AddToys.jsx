@@ -130,7 +130,7 @@ const AddToys = () => {
                             </div>
 
                             <div className='button-group flex justify-center'>
-                                <input className=' btn' type="submit" value="Send" />
+                                <input className='bt' type="submit" value="Send" />
                             </div>
                         </div>
                     </form>
