@@ -63,15 +63,19 @@ const LogIn = () => {
                 console.log(error);
                 setError(error.message);
             })
-        }
-        return (
+    }
+    return (
+        <div className='mt-20'>
+            <div>
+                <h1 className="text-5xl text-center font-bold">Login now!</h1>
+            </div>
             <div className="hero min-h-screen">
                 <div className="hero-content w-full flex-col lg:flex-row">
                     <div data-aos="zoom-in-right">
                         <img src={logimg} className="max-auto vector" />
                     </div>
                     <div data-aos="zoom-in-left" className='flex-shrink-0 w-1/2 max-w-sm shadow-2xl bg-base-100'>
-                        <h1 className="text-5xl font-bold mt-20">Login now!</h1>
+
                         <div className="card ">
                             <div className="card-body">
                                 <form onSubmit={handleLogin}>
@@ -115,7 +119,8 @@ const LogIn = () => {
 
                 </div>
             </div>
-        );
-    };
+        </div>
+    );
+};
 
-    export default LogIn;
+export default LogIn;

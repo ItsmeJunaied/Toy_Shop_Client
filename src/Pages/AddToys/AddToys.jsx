@@ -2,51 +2,51 @@ import './AddToys.css';
 import back from '../../../Images/back4.png'
 import Swal from 'sweetalert2';
 const AddToys = () => {
-    const handleAddHero=event=>{
+    const handleAddHero = event => {
         event.preventDefault();
 
-        const form =event.target;
+        const form = event.target;
 
-        const name= form.name.value;
-        const sname= form.sname.value;
-        const email= form.email.value;
-        const categoty= form.categoty.value;
-        const price= form.price.value;
-        const rating= form.rating.value;
-        const quantity= form.quantity.value;
-        const detail= form.detail.value;
-        const photo= form.photo.value;
+        const name = form.name.value;
+        const sname = form.sname.value;
+        const email = form.email.value;
+        const categoty = form.categoty.value;
+        const price = form.price.value;
+        const rating = form.rating.value;
+        const quantity = form.quantity.value;
+        const detail = form.detail.value;
+        const photo = form.photo.value;
 
-        const newHero={name,sname,email,categoty,price,rating,quantity,detail,photo}
+        const newHero = { name, sname, email, categoty, price, rating, quantity, detail, photo }
         console.log(newHero);
 
-        fetch('http://localhost:5000/toy',{
-            method:'POST',
-            headers:{
-                'content-type':'application/json'
+        fetch('http://localhost:5000/toy', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
             },
             body: JSON.stringify(newHero)
         })
-        .then(res=> res.json())
-        .then(data=>{
-            console.log(data);
-            if(data.insertedId){
-                Swal.fire({
-                    position: 'top-end',
-                    icon: 'success',
-                    title: 'SuccessFully Added',
-                    showConfirmButton: false,
-                    timer: 1500
-                  })
-            }else{
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Oops...',
-                    text: 'Something went wrong!',
-                    footer: '<a href="">Why do I have this issue?</a>'
-                  })
-            }
-        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if (data.insertedId) {
+                    Swal.fire({
+                        position: 'top-end',
+                        icon: 'success',
+                        title: 'SuccessFully Added',
+                        showConfirmButton: false,
+                        timer: 1500
+                    })
+                } else if ("") {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: 'Something went wrong!',
+                        footer: '<a href="">Why do I have this issue?</a>'
+                    })
+                }
+            })
     }
     return (
         <div className='addtoybd'>
@@ -60,72 +60,73 @@ const AddToys = () => {
                     <form onSubmit={handleAddHero}>
                         <div className='card' >
                             <div className='flex '>
-                                <div   className=' flex-grow'>
+                                <div className=' flex-grow'>
                                     <label className="input">
-                                        <input className="input__field" type="text" name='name' placeholder=" " />
+                                        <input className="input__field" type="text" name='name' placeholder=" " required />
                                         <span className="input__label">Hero Toy Name</span>
                                     </label>
                                 </div>
                                 <div className=' flex-grow'>
 
                                     <label className="input">
-                                        <input className="input__field" type="text" name='sname' placeholder=" " />
+                                        <input className="input__field" type="text" name='sname' placeholder=" " required />
                                         <span className="input__label">Seller Name</span>
                                     </label>
                                 </div>
                             </div>
                             <div className='flex '>
-                                <div   className=' flex-grow'>
+                                <div className=' flex-grow'>
                                     <label className="input">
-                                        <input className="input__field" type="email" name='email' placeholder=" " />
+                                        <input className="input__field" type="email" name='email' placeholder=" " required />
                                         <span className="input__label">Seller Email</span>
                                     </label>
                                 </div>
                                 <div className=' flex-grow'>
 
                                     <label className="input">
-                                        <input className="input__field" type="text" name='categoty' placeholder=" " />
+                                        <input className="input__field" type="text" name='categoty' placeholder=" " required />
                                         <span className="input__label">Sub-category</span>
                                     </label>
                                 </div>
                             </div>
                             <div className='flex '>
-                                <div   className=' flex-grow'>
+                                <div className=' flex-grow'>
                                     <label className="input">
-                                        <input className="input__field" type="number" name='price' placeholder=" " />
+                                        <input className="input__field" type="number" name='price' placeholder=" " required />
                                         <span className="input__label">Price</span>
                                     </label>
                                 </div>
                                 <div className=' flex-grow'>
 
                                     <label className="input">
-                                        <input className="input__field" type="number" step="0.1" name='rating' placeholder=" " />
+                                        <input className="input__field" type="number" step="0.1" name='rating' placeholder=" " required />
                                         <span className="input__label">Rating</span>
                                     </label>
                                 </div>
                             </div>
                             <div className='flex '>
-                                <div   className=' flex-grow'>
+                                <div className=' flex-grow'>
                                     <label className="input">
-                                        <input className="input__field" type="number" name='quantity' placeholder=" " />
+                                        <input className="input__field" type="number" name='quantity' placeholder=" " required />
                                         <span className="input__label">Available quantity</span>
                                     </label>
                                 </div>
                                 <div className=' flex-grow'>
+                                    <div className=''>
+                                        <label className="input">
+                                            <input className="input__field" type="text" name='photo' placeholder=" " required />
+                                            <span className="input__label">Photo URL</span>
+                                        </label>
+                                    </div>
 
-                                    <label className="input">
-                                        <input className="input__field" type="text" name='detail' placeholder=" " />
-                                        <span className="input__label">Detail description</span>
-                                    </label>
                                 </div>
                             </div>
-                            <div className='flex '>
-                                <div   className=' flex-grow'>
-                                    <label className="input">
-                                        <input className="input__field" type="text" name='photo' placeholder=" " />
-                                        <span className="input__label">Photo URL</span>
-                                    </label>
-                                </div>
+                            <div className=''>
+                                <label className="input">
+                                    <textarea className="input__field" type="text" name='detail' placeholder=" " required id="" cols="54" rows="5"></textarea>
+                                    
+                                    <span className="input__label">Detail description</span>
+                                </label>
 
                             </div>
 
