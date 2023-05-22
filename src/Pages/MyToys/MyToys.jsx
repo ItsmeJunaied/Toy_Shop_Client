@@ -2,13 +2,15 @@ import { useContext, useEffect, useState } from 'react';
 import './MyToys.css';
 import { AuthContext } from '../../Providers/AuthProvider';
 import Swal from 'sweetalert2';
-import { Link } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 
 const MyToys = () => {
+    
     const { user } = useContext(AuthContext);
     const [mytoy, setMytoy] = useState([]);
 
     const url = `http://localhost:5000/toy?email=${user.email}`;
+    // console.log(url);
     useEffect(() => {
         fetch(url)
             .then(res => res.json())
@@ -33,14 +35,18 @@ const MyToys = () => {
                     method: 'Delete'
                 })
                     .then(res => res.json())
-                    .then(data => console.log(data));
-                if (data.deletedCount > 0) {
-                    Swal.fire(
-                        'Deleted!',
-                        'Your file has been deleted.',
-                        'success'
-                    )
-                }
+                    .then(data => {
+                        console.log(data);
+                        if (data.deletedCount > 0) {
+                            Swal.fire(
+                                'Deleted!',
+                                'Your file has been deleted.',
+                                'success'
+                            );
+                            const remaining = mytoy.filter(toy=>toy._id!==_id);
+                            setMytoy(remaining);
+                    }
+                })
             }
         })
     }

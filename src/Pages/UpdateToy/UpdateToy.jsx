@@ -59,7 +59,7 @@ const UpdateToy = () => {
             </div>
             <div>
                 <form onSubmit={handleUpdateHero} className='mb-36 mt-20'>
-                    <div className='card' >
+                    <div className='cardx' >
                         <div className='flex '>
                             <div className=' flex-grow'>
                                 <label className="input">

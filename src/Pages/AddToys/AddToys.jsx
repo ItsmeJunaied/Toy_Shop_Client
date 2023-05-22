@@ -58,7 +58,7 @@ const AddToys = () => {
                     <p className='ml-60 mr-60'>Most of the projects I work on have about <mark>3</mark> important colors: Main- , Accent-  and Background-Color. Naturally tons of other colors are used in a typical Project, but they are mostly used within specific components.</p>
 
                     <form onSubmit={handleAddHero}>
-                        <div className='card' >
+                        <div className='cardx' >
                             <div className='flex '>
                                 <div className=' flex-grow'>
                                     <label className="input">

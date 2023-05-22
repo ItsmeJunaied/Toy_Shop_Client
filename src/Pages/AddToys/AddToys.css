@@ -48,7 +48,7 @@ mark {
   padding: 0 0.2em;
 }
 
-.card {
+.cardx {
   background: var(--color-background);
   padding: calc(4 * var(--size-bezel));
   margin-top: calc(4 * var(--size-bezel));
@@ -57,19 +57,19 @@ mark {
   box-shadow: .5rem .5rem 0 var(--color-shadow, currentColor);
 }
 
-.card--inverted {
+.cardx--inverted {
   --color-background: var(--color-dark);
   color: var(--color-light);
   --color-shadow: var(--color-accent);
 }
 
-.card--accent {
+.cardx--accent {
   --color-background: var(--color-signal);
   --color-accent: var(--color-light);
   color: var(--color-dark);
 }
 
-.card *:first-child {
+.cardx *:first-child {
   margin-top: 0;
   margin-bottom: 15px;
 }

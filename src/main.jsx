@@ -19,6 +19,7 @@ import AuthProvider from './Providers/AuthProvider';
 import SingleToy from './Pages/SingleToy/SingleToy';
 import ViewDetails from './Pages/ViewDetails/ViewDetails';
 import UpdateToy from './Pages/UpdateToy/UpdateToy';
+import ReactTab from './Pages/Home/ReactTab/ReactTab';
 
 const router = createBrowserRouter([
   {
@@ -40,6 +41,11 @@ const router = createBrowserRouter([
       {
         path:"alltoys",
         element:<AllToys></AllToys>,
+        loader: ()=> fetch('http://localhost:5000/toy')
+      },
+      {
+        path:"",
+        element:<ReactTab></ReactTab>,
         loader: ()=> fetch('http://localhost:5000/toy')
       },
       {
