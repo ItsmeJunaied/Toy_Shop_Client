@@ -8,7 +8,7 @@ const SingleToy = () => {
     const { _id, name, sname, email, price, rating, quantity, detail, photo } = singleid;
     // console.log(singleid);
     return (
-        <div className='flex justify-center align-middle'>
+        <div className='flex justify-center align-middle mt-40'>
             <div className="custom-card" id="hulk">
                 <div className="card-image">
                     <img src={photo} />
@@ -29,7 +29,7 @@ const SingleToy = () => {
                 </div>
             </div>
 
-            <div className="flex items-center justify-center min-h-screen">
+            <div className="flex justify-center min-h-screen">
                 <div className="max-w-md md:max-w-2xl px-2">
                     <div className="bg-white shadow-xl rounded-lg overflow-hidden md:flex">
                         <div>
