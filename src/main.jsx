@@ -20,6 +20,7 @@ import SingleToy from './Pages/SingleToy/SingleToy';
 import ViewDetails from './Pages/ViewDetails/ViewDetails';
 import UpdateToy from './Pages/UpdateToy/UpdateToy';
 import ReactTab from './Pages/Home/ReactTab/ReactTab';
+import Blogs from './Pages/Blogs/Blogs';
 
 const router = createBrowserRouter([
   {
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
       {
         path:"/",
         element:<Home></Home>
+      },
+      {
+        path:"/blog",
+        element:<Blogs></Blogs>
       },
       {
         path:"addtoys",

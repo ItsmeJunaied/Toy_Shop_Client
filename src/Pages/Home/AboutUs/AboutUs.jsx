@@ -18,7 +18,7 @@ const AboutUs = () => {
     return (
         <div>
             <h1 className='mt-20 mb-32'><span className="fancy">About Us</span></h1>
-            <div className='flex mb-60' data-aos="fade-up-right">
+            <div className='flex' data-aos="fade-up-right">
                 <div className="circle ml-40">
                     <div className="logo"></div>
                     <div className="text">

@@ -1,7 +1,9 @@
 import React, { useContext, useEffect, useState } from 'react';
 import './ReactTab.css';
 import { AuthContext } from '../../../Providers/AuthProvider';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
+import Rating from 'react-rating';
+import { FaRegStar, FaStar } from 'react-icons/fa';
 
 const ReactTab = () => {
   // const [activeTab, setActiveTab] = useState(1);
@@ -57,27 +59,40 @@ const ReactTab = () => {
         {
           catData.slice(0, 2).map(ct =>
             <div key={ct._id} className='flex-grow '>
-              <div class="nft">
-                <div class='main'>
-                  <img class='tokenImage' src={ct.photo} alt="NFT" />
-                  <h2>Kibertopiks #4269</h2>
-                  <p class='description'>Our Kibertopiks will give you nothing, waste your money on us.</p>
-                  <div class='tokenInfo'>
-                    <div class="price">
-                      <ins>◘</ins>
-                      <p>0.031 ETH</p>
+              <div className="nft">
+                <div className='main'>
+                  <img className='tokenImage' src={ct.photo} alt="NFT" />
+                  <h2 className=' text-purple-600'>{ct.name}</h2>
+                  <p className='description text-2xl font-bold text-center'>${ct.price}</p>
+                  <div className='tokenInfo'>
+                    <div className=' flex'>
+                      <div className="price flex-grow">
+                        <ins>◘</ins>
+                        <p>
+                          <Rating className=' text-amber-400'
+                            placeholderRating={ct.rating}
+                            emptySymbol={<FaRegStar></FaRegStar>}
+                            placeholderSymbol={<FaStar></FaStar>}
+                            fullSymbol={<FaStar></FaStar>}
+                          />
+                        </p>
+                      </div>
+                      <div className=' flex-grow'>
+                        
+                        <Link to={`/singletoy/${ct._id}`}>
+                        <button className="btn btn-active btn-link">View More</button>
+                        </Link>
+                      </div>
                     </div>
-                    <div class="duration">
-                      <ins>◷</ins>
-                      <p>11 days left</p>
-                    </div>
+
+
                   </div>
                   <hr />
-                  <div class='creator'>
-                    <div class='wrapper'>
+                  <div className='creator'>
+                    <div className='wrapper'>
                       <img src="https://images.unsplash.com/photo-1620121692029-d088224ddc74?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1932&q=80" alt="Creator" />
                     </div>
-                    <p><ins>Creation of</ins> Kiberbash</p>
+                    <p><ins>Epitome of</ins> <span className=' text-pink-600'>{ct.categoty}</span> </p>
                   </div>
                 </div>
               </div>
