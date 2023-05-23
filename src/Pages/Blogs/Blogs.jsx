@@ -65,7 +65,6 @@ const Blogs = () => {
                                     </summary>
                                     <div className='content ml-10 text-lg'>
                                         <p>Express.js is a web application framework for Node.js that offers flexibility and simplicity. Nest.js is a scalable Node.js framework built with TypeScript, focusing on modular architecture and code organization.</p>
-                                        <img className='w-16' src="https://images.vexels.com/media/users/3/143597/isolated/preview/0626994ef7a02a13ab0f7912889ece0e-lol-meme-face.png" />
                                     </div>
                                 </details>
                             </div>
@@ -83,7 +82,6 @@ const Blogs = () => {
                                     </summary>
                                     <div className='content ml-10 text-lg'>
                                         <p>MongoDB's aggregate is a feature that allows you to perform advanced data aggregation operations on collections. It uses a pipeline approach to process and transform documents, similar to SQL's GROUP BY and aggregate functions. It enables you to perform operations like filtering, grouping, sorting, and calculating aggregated values. It provides a flexible and efficient way to analyze and extract valuable insights from your data.</p>
-                                        <img className='w-16' src="https://images.vexels.com/media/users/3/143597/isolated/preview/0626994ef7a02a13ab0f7912889ece0e-lol-meme-face.png" />
                                     </div>
                                 </details>
                             </div>

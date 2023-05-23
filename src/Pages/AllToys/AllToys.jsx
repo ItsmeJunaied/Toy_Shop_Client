@@ -22,7 +22,7 @@ const AllToys = () => {
     }, [])
 
     const handleSearch = () => {
-        const url = `http://localhost:5000/toy/${search}`;
+        const url = `https://toy-hero-server-ten.vercel.app/toy/${search}`;
         console.log(url);
         fetch(url)
             .then(res => res.json())

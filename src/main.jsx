@@ -21,6 +21,8 @@ import ViewDetails from './Pages/ViewDetails/ViewDetails';
 import UpdateToy from './Pages/UpdateToy/UpdateToy';
 import ReactTab from './Pages/Home/ReactTab/ReactTab';
 import Blogs from './Pages/Blogs/Blogs';
+import NotFound from './NotFound/NotFound';
+import PrivateRoute from './PrivateRoute/PrivateRoute';
 
 const router = createBrowserRouter([
   {
@@ -37,21 +39,21 @@ const router = createBrowserRouter([
       },
       {
         path:"addtoys",
-        element:<AddToys></AddToys>
+        element:<PrivateRoute><AddToys></AddToys></PrivateRoute>
       },
       {
         path:"mytoys",
-        element:<MyToys></MyToys>
+        element:<PrivateRoute><AddToys></AddToys></PrivateRoute>
       },
       {
         path:"alltoys",
         element:<AllToys></AllToys>,
-        loader: ()=> fetch('http://localhost:5000/toy')
+        loader: ()=> fetch('https://toy-hero-server-ten.vercel.app/toy')
       },
       {
         path:"",
         element:<ReactTab></ReactTab>,
-        loader: ()=> fetch('http://localhost:5000/toy')
+        loader: ()=> fetch('https://toy-hero-server-ten.vercel.app/toy')
       },
       {
         path:"login",
@@ -64,15 +66,19 @@ const router = createBrowserRouter([
       {
         path:"update/:id",
         element:<UpdateToy></UpdateToy>,
-        loader:({params})=>fetch(`http://localhost:5000/toy/${params.id}`)
+        loader:({params})=>fetch(`https://toy-hero-server-ten.vercel.app/toy/${params.id}`)
       },
       {
         path:"singletoy/:id",
-        element:<SingleToy></SingleToy>,
-        loader:({params})=>fetch(`http://localhost:5000/toy/${params.id}`)
+        element:<PrivateRoute><SingleToy></SingleToy></PrivateRoute>,
+        loader:({params})=>fetch(`https://toy-hero-server-ten.vercel.app/toy/${params.id}`)
       },
     ]
   },
+  {
+    path:'*',
+    element:<NotFound></NotFound>
+  }
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(

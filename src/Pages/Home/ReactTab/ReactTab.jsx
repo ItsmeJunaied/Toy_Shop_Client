@@ -13,7 +13,7 @@ const ReactTab = () => {
   const [Active, setActiveTab] = useState(' ');
   // const alldata=useLoaderData();
   // console.log('all data',alldata);
-  const url = `http://localhost:5000/toy?categoty=${Active}`;
+  const url = `https://toy-hero-server-ten.vercel.app/toy?categoty=${Active}`;
   // console.log(url);
   useEffect(() => {
     fetch(url)
@@ -27,27 +27,27 @@ const ReactTab = () => {
 
   return (
     <div>
-      <h1 className="title text-center mt-5 p-5">Available Job's</h1>
+      <h1 className="title text-cyan-400 text-center mt-5 p-5">Toy Category</h1>
       <div className="tab-container text-center">
         <div className="text-center w-100 m-auto">
-          <div className="tabs d-flex justify-content-center align-items-center">
+          <div className="tabs flex  justify-evenly align-middle bg-purple-600  rounded-3xl ml-36 mr-20">
             <div
               onClick={() => handleTabClick("Marvel")}
-              className={`tab  tab2 Marvel ${Active == "Marvel" ? " bg-danger text-white" : ""
+              className={`tab btn btn-primary tab2 Marvel ${Active == "Marvel" ? " btn bg-secondary text-white" : ""
                 }`}
             >
               MARVEL
             </div>
             <div
               onClick={() => handleTabClick("American")}
-              className={`tab  tab2 American ${Active == "American" ? " bg-danger text-white" : ""
+              className={`tab btn btn-primary tab2 American ${Active == "American" ? " bg-secondary text-white" : ""
                 }`}
             >
               AMERICAN
             </div>
             <div
               onClick={() => handleTabClick("TRANSFORMERS")}
-              className={`tab  tab2 TRANSFORMERS ${Active == "TRANSFORMERS" ? " bg-danger text-white" : ""
+              className={`tab btn btn-primary tab2 TRANSFORMERS ${Active == "TRANSFORMERS" ? " bg-secondary text-white" : ""
                 }`}
             >
               TRANSFORMERS

@@ -67,31 +67,32 @@ const Register = () => {
                         <div className="card ">
                             <div className="card-body">
                                 <form onSubmit={handleRegister}>
-                                    <div className="form-control">
+                                    <div className="form-control border-none">
                                         <label className="label">
                                             <span className="label-text">Name</span>
                                         </label>
                                         <input type="name" name='name' placeholder="Name" className="input input-bordered" />
                                     </div>
-                                    <div className="form-control">
+                                    <div className="form-control border-none">
                                         <label className="label">
                                             <span className="label-text">Email</span>
                                         </label>
                                         <input type="email" name='email' placeholder="email" className="input input-bordered" />
                                     </div>
-                                    <div className="form-control">
+                                    <div className="form-control border-none">
                                         <label className="label">
                                             <span className="label-text">Password</span>
                                         </label>
                                         <input type="password" name='password' placeholder="password" className="input input-bordered" />
                                     </div>
-                                    <div className="form-control">
+                                    <p className=' text-red-600'>{error}</p>
+                                    <div className="form-control border-none">
                                         <label className="label">
                                             <span className="label-text">Photo Url</span>
                                         </label>
                                         <input type="text" name='photo' placeholder="password" className="input input-bordered" />
                                     </div>
-                                    <div className="form-control mt-6">
+                                    <div className="form-control mt-6 border-none">
                                         <input className="btn btn-primary" type="submit" value="Register" />
                                     </div>
                                     <div className="divider">OR</div>

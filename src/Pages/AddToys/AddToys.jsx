@@ -20,7 +20,7 @@ const AddToys = () => {
         const newHero = { name, sname, email, categoty, price, rating, quantity, detail, photo }
         console.log(newHero);
 
-        fetch('http://localhost:5000/toy', {
+        fetch('https://toy-hero-server-ten.vercel.app/toy', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -55,7 +55,7 @@ const AddToys = () => {
                 <div className="l-design-widht">
                     <h1 className=' text-center '>ADD Toys</h1>
 
-                    <p className='ml-60 mr-60'>Most of the projects I work on have about <mark>3</mark> important colors: Main- , Accent-  and Background-Color. Naturally tons of other colors are used in a typical Project, but they are mostly used within specific components.</p>
+                    <p className='ml-60 mr-60'> In the Add Toy section, ensure all input fields are filled and submitted as the information will be recorded and <mark> visible</mark> to others.</p>
 
                     <form onSubmit={handleAddHero}>
                         <div className='cardx' >
@@ -131,7 +131,7 @@ const AddToys = () => {
                             </div>
 
                             <div className='button-group flex justify-center'>
-                                <input className='bt' type="submit" value="Send" />
+                                <input className='bt' type="submit" value="Add" />
                             </div>
                         </div>
                     </form>

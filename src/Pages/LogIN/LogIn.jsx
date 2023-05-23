@@ -7,6 +7,7 @@ import { GithubAuthProvider, GoogleAuthProvider, getAuth, signInWithPopup } from
 import { useContext, useState } from 'react';
 import app from '../../firebase/firebase.config';
 import { AuthContext } from '../../Providers/AuthProvider';
+// import Hook from '../../hook/Hook';
 
 
 const LogIn = () => {
@@ -17,6 +18,8 @@ const LogIn = () => {
     const provider = new GoogleAuthProvider();
     const Githubprovider = new GithubAuthProvider();
 
+
+    // Hook('login');
     const [user, setUser] = useState({})
 
     const from = location.state?.from.pathname || '/'
@@ -78,23 +81,23 @@ const LogIn = () => {
 
                         <div className="card ">
                             <div className="card-body">
-                                <form onSubmit={handleLogin}>
-                                    <div className="form-control">
+                                <form onSubmit={handleLogin} >
+                                    <div className="form-control border-none">
                                         <label className="label">
                                             <span className="label-text">Email</span>
                                         </label>
                                         <input type="email" name='email' placeholder="email" className="input input-bordered" />
                                     </div>
-                                    <div className="form-control">
+                                    <div className="form-control border-none">
                                         <label className="label">
                                             <span className="label-text">Password</span>
                                         </label>
                                         <input type="password" name='password' placeholder="password" className="input input-bordered" />
                                         <label className="label">
-                                            <a className="link link-accent">Forgot password?</a>
+                                            
                                         </label>
                                     </div>
-                                    <div className="form-control mt-6">
+                                    <div className="form-control mt-6 border-none">
                                         <input className="btn btn-primary" type="submit" value="Login" />
                                     </div>
                                     <div className="divider">OR</div>
