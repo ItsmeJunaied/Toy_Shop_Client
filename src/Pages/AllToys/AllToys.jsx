@@ -9,7 +9,7 @@ const AllToys = () => {
     const [heroToy, setHeroToys] = useState([]);
     //load more
 
-    const [noofelem, setNoofelem] = useState(2);
+    const [noofelem, setNoofelem] = useState(20);
     const sliceData = heroToy.slice(0, noofelem);
     // serach
     const [search, setSearch] = useState('');
